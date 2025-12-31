@@ -1,0 +1,158 @@
+{
+  "reporting_entity_name": "Test Payer Mixed Types",
+  "reporting_entity_type": "health insurance issuer",
+  "last_updated_on": "2025-01-01",
+  "version": "1.0.0",
+  "in_network": [
+    {
+      "negotiation_arrangement": "ffs",
+      "name": "Knee Replacement (CPT)",
+      "billing_code_type": "CPT",
+      "billing_code_type_version": "2025",
+      "billing_code": "27447",
+      "description": "Total knee arthroplasty",
+      "negotiated_rates": [
+        {
+          "provider_groups": [
+            {
+              "npi": [1234567890],
+              "tin": {"type": "ein", "value": "12-3456789"}
+            }
+          ],
+          "negotiated_prices": [
+            {
+              "negotiated_type": "negotiated",
+              "negotiated_rate": 15000.00,
+              "billing_class": "institutional"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "negotiation_arrangement": "ffs",
+      "name": "Hip Replacement (CPT)",
+      "billing_code_type": "CPT",
+      "billing_code_type_version": "2025",
+      "billing_code": "27130",
+      "description": "Total hip arthroplasty",
+      "negotiated_rates": [
+        {
+          "provider_groups": [
+            {
+              "npi": [1234567890],
+              "tin": {"type": "ein", "value": "12-3456789"}
+            }
+          ],
+          "negotiated_prices": [
+            {
+              "negotiated_type": "negotiated",
+              "negotiated_rate": 18000.00,
+              "billing_class": "institutional"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "negotiation_arrangement": "ffs",
+      "name": "Major Joint Replacement (MS-DRG 470)",
+      "billing_code_type": "MS-DRG",
+      "billing_code_type_version": "2025",
+      "billing_code": "470",
+      "description": "Major Hip and Knee Joint Replacement or Reattachment of Lower Extremity without MCC",
+      "negotiated_rates": [
+        {
+          "provider_groups": [
+            {
+              "npi": [1234567890],
+              "tin": {"type": "ein", "value": "12-3456789"}
+            }
+          ],
+          "negotiated_prices": [
+            {
+              "negotiated_type": "negotiated",
+              "negotiated_rate": 25000.00,
+              "billing_class": "institutional"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "negotiation_arrangement": "ffs",
+      "name": "Major Joint Replacement with MCC (MS-DRG 469)",
+      "billing_code_type": "MS-DRG",
+      "billing_code_type_version": "2025",
+      "billing_code": "469",
+      "description": "Major Hip and Knee Joint Replacement or Reattachment of Lower Extremity with MCC",
+      "negotiated_rates": [
+        {
+          "provider_groups": [
+            {
+              "npi": [1234567890],
+              "tin": {"type": "ein", "value": "12-3456789"}
+            }
+          ],
+          "negotiated_prices": [
+            {
+              "negotiated_type": "negotiated",
+              "negotiated_rate": 35000.00,
+              "billing_class": "institutional"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "negotiation_arrangement": "ffs",
+      "name": "Office Visit (HCPCS)",
+      "billing_code_type": "HCPCS",
+      "billing_code_type_version": "2025",
+      "billing_code": "G0438",
+      "description": "Annual wellness visit, initial",
+      "negotiated_rates": [
+        {
+          "provider_groups": [
+            {
+              "npi": [1234567890],
+              "tin": {"type": "ein", "value": "12-3456789"}
+            }
+          ],
+          "negotiated_prices": [
+            {
+              "negotiated_type": "negotiated",
+              "negotiated_rate": 175.00,
+              "billing_class": "professional"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "negotiation_arrangement": "ffs",
+      "name": "Revenue Code Example",
+      "billing_code_type": "RC",
+      "billing_code_type_version": "2025",
+      "billing_code": "0120",
+      "description": "Room and Board - Semi-Private",
+      "negotiated_rates": [
+        {
+          "provider_groups": [
+            {
+              "npi": [1234567890],
+              "tin": {"type": "ein", "value": "12-3456789"}
+            }
+          ],
+          "negotiated_prices": [
+            {
+              "negotiated_type": "negotiated",
+              "negotiated_rate": 1500.00,
+              "billing_class": "institutional"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

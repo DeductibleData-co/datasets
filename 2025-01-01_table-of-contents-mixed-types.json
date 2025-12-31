@@ -1,0 +1,44 @@
+{
+  "reporting_entity_name": "Test Payer - Mixed Billing Types",
+  "reporting_entity_type": "health insurance issuer",
+  "last_updated_on": "2025-01-01",
+  "version": "1.0.0",
+  "reporting_structure": [
+    {
+      "reporting_plans": [
+        {
+          "plan_name": "Test Plan - Mixed Types",
+          "plan_id_type": "EIN",
+          "plan_id": "12-3456789",
+          "plan_market_type": "group"
+        }
+      ],
+      "in_network_files": [
+        {
+          "description": "In-network rates with mixed billing code types (CPT, MS-DRG, HCPCS, RC)",
+          "location": "https://raw.githubusercontent.com/DeductibleData-co/datasets/main/in-network-rates-mixed-types.json"
+        },
+        {
+          "description": "CMS multiple plans sample (CPT)",
+          "location": "https://raw.githubusercontent.com/CMSgov/price-transparency-guide/master/examples/in-network-rates/in-network-rates-multiple-plans-sample.json"
+        },
+        {
+          "description": "CMS bundle single plan sample (ICD)",
+          "location": "https://raw.githubusercontent.com/CMSgov/price-transparency-guide/master/examples/in-network-rates/in-network-rates-bundle-single-plan-sample.json"
+        },
+        {
+          "description": "CMS capitation single plan sample (CPT)",
+          "location": "https://raw.githubusercontent.com/CMSgov/price-transparency-guide/master/examples/in-network-rates/in-network-rates-capitation-single-plan-sample.json"
+        },
+        {
+          "description": "CMS fee-for-service single plan sample (CPT)",
+          "location": "https://raw.githubusercontent.com/CMSgov/price-transparency-guide/master/examples/in-network-rates/in-network-rates-fee-for-service-single-plan-sample.json"
+        },
+        {
+          "description": "CMS no NPI sample (CPT)",
+          "location": "https://raw.githubusercontent.com/CMSgov/price-transparency-guide/master/examples/in-network-rates/in-network-rates-no-npi.json"
+        }
+      ]
+    }
+  ]
+}
