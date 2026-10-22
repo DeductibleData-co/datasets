@@ -1,7 +1,7 @@
 {
   "reporting_entity_name": "Test Payer - Mixed Billing Types",
   "reporting_entity_type": "health insurance issuer",
-  "last_updated_on": "2025-01-01",
+  "last_updated_on": "2026-10-22",
   "version": "1.0.0",
   "reporting_structure": [
     {
@@ -37,6 +37,10 @@
         {
           "description": "CMS no NPI sample (CPT)",
           "location": "https://raw.githubusercontent.com/CMSgov/price-transparency-guide/master/examples/in-network-rates/in-network-rates-no-npi.json"
+        },
+        {
+          "description": "String-typed npi shape (DED-1881) - UnitedHealthcare's convention; MS-DRG via provider_references + CPT via inline provider_groups",
+          "location": "https://raw.githubusercontent.com/DeductibleData-co/datasets/main/in-network-rates-string-npi.json"
         }
       ]
     }

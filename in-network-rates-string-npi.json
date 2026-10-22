@@ -1,0 +1,73 @@
+{
+  "reporting_entity_name": "Test Payer - String NPI Shape (DED-1881)",
+  "reporting_entity_type": "health insurance issuer",
+  "last_updated_on": "2026-10-22",
+  "version": "1.0.0",
+  "_comment": "DED-1881 fixture. Every other test_payer in_network file (ours and the CMS examples) publishes `npi` as a JSON NUMBER, so the whole smoke corpus was ONE publisher shape and could not see a type defect. UnitedHealthcare publishes `npi` as a JSON STRING; aetna, anthem and cigna publish numbers. On production image baa2e47 the NPI filter compared an int set against the parsed value with a bare `in`, so every UHC NPI-scoped pull returned ZERO rows, SUCCEEDED, silently. This file is the string half of the corpus. NPI 3333333333 is the NPI the 7-job e2e suite already filters on (job3), and TIN 99-9991881 appears ONLY here -- so job3's rows must CONTAIN that TIN (string shape matched) and must NOT contain NPI 9999999991 (the reduce still drops non-matching NPIs from the same array). Both comparison sites are exercised: the MS-DRG object resolves through top-level provider_references, the CPT object through inline provider_groups.",
+  "provider_references": [
+    {
+      "provider_group_id": 1881,
+      "provider_groups": [
+        {
+          "npi": ["3333333333", "9999999991"],
+          "tin": {
+            "type": "ein",
+            "value": "99-9991881"
+          }
+        }
+      ]
+    }
+  ],
+  "in_network": [
+    {
+      "negotiation_arrangement": "ffs",
+      "name": "Major Joint Replacement (MS-DRG 470) - string NPI via provider_references",
+      "billing_code_type": "MS-DRG",
+      "billing_code_type_version": "2026",
+      "billing_code": "470",
+      "description": "Major hip and knee joint replacement without MCC",
+      "negotiated_rates": [
+        {
+          "provider_references": [1881],
+          "negotiated_prices": [
+            {
+              "negotiated_type": "negotiated",
+              "negotiated_rate": 28810.0,
+              "expiration_date": "9999-12-31",
+              "billing_class": "institutional"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "negotiation_arrangement": "ffs",
+      "name": "Knee Replacement (CPT 27447) - string NPI via inline provider_groups",
+      "billing_code_type": "CPT",
+      "billing_code_type_version": "2026",
+      "billing_code": "27447",
+      "description": "Total knee arthroplasty",
+      "negotiated_rates": [
+        {
+          "provider_groups": [
+            {
+              "npi": ["3333333333"],
+              "tin": {
+                "type": "ein",
+                "value": "99-9991881"
+              }
+            }
+          ],
+          "negotiated_prices": [
+            {
+              "negotiated_type": "negotiated",
+              "negotiated_rate": 18810.0,
+              "expiration_date": "9999-12-31",
+              "billing_class": "professional"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
